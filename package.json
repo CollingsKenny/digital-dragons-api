@@ -1,0 +1,28 @@
+{
+  "name": "digital-dragons-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.15.0",
+    "config": "^3.3.1",
+    "firebase-admin": "^8.12.1",
+    "graphql": "^15.1.0",
+    "mongoose": "^5.9.19"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "nodemon": "^2.0.4",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
+  }
+}
