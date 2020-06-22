@@ -19,18 +19,14 @@ import mongoose, { Schema } from 'mongoose';
 
 const CharacterSchema = new Schema({
   name: String,
-  user: {
+  userId: {
     type: mongoose.ObjectId,
     ref: 'user',
   },
   traits: [
     {
-      amount: Number,
-      stat: String,
-      parent: {
-        type: mongoose.ObjectId,
-        ref: 'feature',
-      },
+      type: mongoose.ObjectId,
+      ref: 'trait',
     },
   ],
   race: {
@@ -43,4 +39,4 @@ const CharacterSchema = new Schema({
   },
 });
 
-export const Character = mongoose.model('Character', CharacterSchema);
+export const Character = mongoose.model('character', CharacterSchema);

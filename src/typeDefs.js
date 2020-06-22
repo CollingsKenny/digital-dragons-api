@@ -4,11 +4,18 @@ import { gql } from 'apollo-server';
 // Defines the shape of queries executed by a client
 export const typeDefs = gql`
   type Query {
-    user(id: String!): User
+    user(id: ID!): User
     characters: [Character]
+    features: [Feature]
   }
   type Mutation {
     createUser(name: String): User
+    createCharacter(userId: ID!, name: String): Character
+    createFeature(
+      name: String!
+      description: String
+      parentFeatureId: ID
+    ): Feature
   }
   enum Stat {
     STR
@@ -30,7 +37,7 @@ export const typeDefs = gql`
     id: ID!
     name: String!
     userId: String!
-    user: User!
+    user: User
     traits: [Trait]
     str: [Trait]
     dex: [Trait]
